@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#05060a" />
+    <meta name="description" content="150,000 GPU particles morphing through light." />
+    <title>Aurora Field</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3CradialGradient id='g'%3E%3Cstop offset='0' stop-color='%23fff'/%3E%3Cstop offset='.4' stop-color='%23a06bff'/%3E%3Cstop offset='1' stop-color='%2305060a' stop-opacity='0'/%3E%3C/radialGradient%3E%3Ccircle cx='16' cy='16' r='16' fill='url(%23g)'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" />
+    <style>
+      html, body, #root { height: 100%; margin: 0; }
+      body { background: #05060a; overflow: hidden; touch-action: none; -webkit-font-smoothing: antialiased; }
+      .overlay {
+        position: fixed;
+        inset: auto 0 0 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 28px 32px;
+        color: #e9ecff;
+        font: 500 12px/1 Inter, system-ui, sans-serif;
+        letter-spacing: 0.24em;
+        pointer-events: none;
+        user-select: none;
+        animation: reveal 2s 1.6s both;
+      }
+      .overlay span:first-child { opacity: 0.55; }
+      .credit { font-size: 10px; letter-spacing: 0.16em; opacity: 0.32; }
+      @keyframes reveal { from { opacity: 0; transform: translateY(6px); } }
+      @media (prefers-reduced-motion: reduce) { .overlay { animation: none; } }
+      @media (max-width: 600px) { .overlay { flex-direction: column; align-items: flex-start; gap: 10px; padding: 20px; } }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
